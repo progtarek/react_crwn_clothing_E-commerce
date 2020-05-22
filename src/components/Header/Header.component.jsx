@@ -15,6 +15,9 @@ export default function Header() {
         <Link to='shop' className='nav-item'>
           Contact
         </Link>
+        <Link to='auth' className='nav-item'>
+          Login
+        </Link>
       </nav>
     </div>
   );

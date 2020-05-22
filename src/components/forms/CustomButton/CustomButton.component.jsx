@@ -1,8 +1,8 @@
 import React from 'react';
 import './CustomButton.module.styles.scss';
-export default function CustomButton({ children, ...rest }) {
+export default function CustomButton({ children, customClass, ...rest }) {
   return (
-    <button className='custom-button' {...rest}>
+    <button className={`${customClass} custom-button`} {...rest}>
       {children}
     </button>
   );

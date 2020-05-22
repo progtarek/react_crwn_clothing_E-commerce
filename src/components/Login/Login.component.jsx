@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.module.styles.scss';
 import CustomInput from '../forms/CustomInput/CustomInput.component';
 import CustomButton from '../forms/CustomButton/CustomButton.component';
+import { signInWithGoogle } from '../../utils/firebase';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -35,7 +36,12 @@ export default function Login() {
         value={credentials.password}
         onChange={changeHandler}
       />
-      <CustomButton>Login</CustomButton>
+      <div className='controls'>
+        <CustomButton>Login</CustomButton>
+        <CustomButton customClass='google' onClick={signInWithGoogle}>
+          Sign in With Google
+        </CustomButton>
+      </div>
     </form>
   );
 }

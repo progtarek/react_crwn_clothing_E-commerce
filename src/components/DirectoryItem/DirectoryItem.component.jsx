@@ -2,8 +2,6 @@ import React from 'react';
 import './DirectoryItem.module.styles.scss';
 import { withRouter } from 'react-router-dom';
 const DirectoryItem = ({ title, imageUrl, linkUrl, size, match, history }) => {
-  console.log(match);
-  console.log(history);
   return (
     <div
       className={`${size} directory-item`}

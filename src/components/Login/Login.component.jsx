@@ -50,8 +50,12 @@ export default function Login() {
         onChange={changeHandler}
       />
       <div className='controls'>
-        <CustomButton>Login</CustomButton>
-        <CustomButton customClass='google' onClick={signInWithGoogle}>
+        <CustomButton type='submit'>Login</CustomButton>
+        <CustomButton
+          type='button'
+          customClass='google'
+          onClick={signInWithGoogle}
+        >
           Sign in With Google
         </CustomButton>
       </div>

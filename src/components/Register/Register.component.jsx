@@ -30,9 +30,18 @@ export default function Register() {
 
     try {
       const { email, password, displayName } = credentials;
-      const { user } = auth.createUserWithEmailAndPassword(email, password);
-
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      console.log('user', user);
       await createUserProfileDocument(user, displayName);
+      setCredentials({
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+      });
     } catch (error) {
       console.error(error);
     }

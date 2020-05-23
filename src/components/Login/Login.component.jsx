@@ -22,6 +22,8 @@ export default function Login() {
 
   return (
     <form className='login' onSubmit={onSubmit}>
+      <h2 className='heading'>I already have an account</h2>
+      <span>Sign in with your email and password</span>
       <CustomInput
         type='text'
         name='email'

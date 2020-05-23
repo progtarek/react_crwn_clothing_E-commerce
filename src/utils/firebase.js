@@ -13,11 +13,7 @@ const config = {
   appId: '1:456135959883:web:2c09e2541e75765a5bf4ce',
   measurementId: 'G-VMPLYP0ZHJ',
 };
-
 firebase.initializeApp(config);
-
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
 
 const GoogleProvider = new firebase.auth.GoogleAuthProvider();
 GoogleProvider.setCustomParameters({
@@ -25,5 +21,34 @@ GoogleProvider.setCustomParameters({
 });
 
 export const signInWithGoogle = () => auth.signInWithPopup(GoogleProvider);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+export const createUserProfileDocument = async (
+  authenticatedUser,
+  additionalData
+) => {
+  if (authenticatedUser) {
+    const User = firestore.doc(`users/${authenticatedUser.uid}`);
+    const snapShot = await User.get();
+
+    if (!snapShot.exists) {
+      const { displayName, email } = authenticatedUser;
+      const createdAt = new Date().toISOString();
+      try {
+        await User.set({
+          displayName,
+          email,
+          createdAt,
+          additionalData,
+        });
+      } catch (error) {
+        console.error('failed to create user', error.message);
+      }
+    }
+    return User;
+  }
+};
 
 export default firebase;

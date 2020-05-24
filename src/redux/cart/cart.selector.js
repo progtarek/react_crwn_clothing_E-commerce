@@ -13,4 +13,9 @@ export const cartItemCountSelector = createSelector(
     )
 );
 
+export const cartVisibilitySelector = createSelector(
+  [cartSelector],
+  (cart) => cart.visibility
+);
+
 export default cartItemSelector;

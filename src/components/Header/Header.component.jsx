@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/imgs/crown.svg';
 import { auth } from '../../utils/firebase';
 import { connect } from 'react-redux';
+import Cart from '../Cart/Cart.component';
+import CartDropDown from '../CartDropDown/CartDropDown.component';
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, visibility }) => {
   return (
     <div className='header'>
       <Link to='/'>
@@ -27,13 +29,16 @@ const Header = ({ currentUser }) => {
             Login
           </Link>
         )}
+        <Cart />
       </nav>
+      {visibility ? <CartDropDown /> : null}
     </div>
   );
 };
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { visibility } }) => ({
+  currentUser,
+  visibility,
 });
 
 export default connect(mapStateToProps)(Header);

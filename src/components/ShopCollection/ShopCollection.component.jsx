@@ -9,8 +9,8 @@ const ShopCollection = ({ title, items }) => {
       <div className='row'>
         {items
           .filter((item, index) => index < 4)
-          .map(({ id, ...rest }) => (
-            <ShopCollectionItem key={id} {...rest} />
+          .map((item) => (
+            <ShopCollectionItem key={item.id} item={item} />
           ))}
       </div>
     </div>

@@ -13,6 +13,15 @@ export const cartItemCountSelector = createSelector(
     )
 );
 
+export const cartItemPriceSelector = createSelector(
+  [cartItemSelector],
+  (items) =>
+    items.reduce(
+      (accumulatedQuantity, item) => accumulatedQuantity + item.price,
+      0
+    )
+);
+
 export const cartVisibilitySelector = createSelector(
   [cartSelector],
   (cart) => cart.visibility

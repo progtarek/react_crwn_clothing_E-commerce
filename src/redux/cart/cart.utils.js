@@ -12,4 +12,38 @@ const addItemToCart = (cartItems, itemToAdd) => {
   return [...cartItems, { ...itemToAdd, quantity: 1 }];
 };
 
+export const increaseItemQuantity = (cartItems, itemToIncrease) => {
+  const exist = cartItems.find((item) => item.id === itemToIncrease.id);
+
+  if (!exist) return Error('Item does not exist.');
+
+  return cartItems.map((item) => {
+    return item.id === itemToIncrease.id
+      ? {
+          ...itemToIncrease,
+          quantity: itemToIncrease.quantity + 1,
+        }
+      : item;
+  });
+};
+
+export const decreaseItemQuantity = (cartItems, itemTodDecrease) => {
+  const exist = cartItems.find((item) => item.id === itemTodDecrease.id);
+
+  if (!exist) return Error('Item does not exist.');
+
+  if (itemTodDecrease.quantity === 1) {
+    return cartItems.filter((item) => item.id !== itemTodDecrease.id);
+  } else {
+    return cartItems.map((item) => {
+      return item.id === itemTodDecrease.id
+        ? {
+            ...itemTodDecrease,
+            quantity: itemTodDecrease.quantity - 1,
+          }
+        : item;
+    });
+  }
+};
+
 export default addItemToCart;

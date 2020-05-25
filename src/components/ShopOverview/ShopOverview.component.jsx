@@ -7,9 +7,10 @@ import { connect } from 'react-redux';
 const ShopOverView = ({ collections }) => {
   return (
     <div className='shop-overview'>
-      {collections.map(({ id, ...rest }) => (
-        <ShopCollection key={id} {...rest} limit='4' />
-      ))}
+      {Object.keys(collections).map((key) => {
+        const { id, ...rest } = collections[key];
+        return <ShopCollection key={id} {...rest} limit='4' />;
+      })}
     </div>
   );
 };

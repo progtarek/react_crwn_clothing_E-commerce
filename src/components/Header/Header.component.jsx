@@ -14,10 +14,10 @@ const Header = ({ currentUser, visibility }) => {
         <Logo className='logo' />
       </Link>
       <nav className='nav'>
-        <Link to='shop' className='nav-item'>
+        <Link to='/shop' className='nav-item'>
           Shop
         </Link>
-        <Link to='shop' className='nav-item'>
+        <Link to='/shop' className='nav-item'>
           Contact
         </Link>
         {currentUser ? (

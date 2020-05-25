@@ -20,7 +20,7 @@ const INITIAL_STATE = {
     },
     {
       title: 'women',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      imageUrl: 'https://i.ibb.co/GCCdy8t/women.png',
       size: 'large',
       id: 4,
       linkUrl: 'women',

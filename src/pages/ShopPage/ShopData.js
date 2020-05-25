@@ -154,8 +154,8 @@ const shopData = [
   },
   {
     id: 4,
-    title: 'Womens',
-    routeName: 'womens',
+    title: 'women',
+    routeName: 'women',
     items: [
       {
         id: 23,

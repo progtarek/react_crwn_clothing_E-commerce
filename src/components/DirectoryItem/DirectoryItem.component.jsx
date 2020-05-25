@@ -5,7 +5,7 @@ const DirectoryItem = ({ title, imageUrl, linkUrl, size, match, history }) => {
   return (
     <div
       className={`${size} directory-item`}
-      onClick={() => history.push(`${match.url}${linkUrl}`)}
+      onClick={() => history.push(`shop/${linkUrl}`)}
     >
       <div
         className='background-image'

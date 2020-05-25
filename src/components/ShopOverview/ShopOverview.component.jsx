@@ -8,7 +8,7 @@ const ShopOverView = ({ collections }) => {
   return (
     <div className='shop-overview'>
       {collections.map(({ id, ...rest }) => (
-        <ShopCollection key={id} {...rest} />
+        <ShopCollection key={id} {...rest} limit='4' />
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Homepage from './pages/HomePage/Homepage';
+import Homepage from './pages/Homepage/Homepage';
 import ShopPage from './pages/ShopPage/ShopPage.component';
 import Header from './components/Header/Header.component';
 import Checkout from './pages/Chekout/Checkout.component';

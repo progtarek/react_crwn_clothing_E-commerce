@@ -4,7 +4,7 @@ import './Directory.module.styles.scss';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import itemsSelector from '../../redux/directory/directory.selector';
-const Directory = ({items}) => {
+const Directory = ({ items }) => {
   return (
     <div className='directory'>
       {items.map(({ id, ...rest }) => (

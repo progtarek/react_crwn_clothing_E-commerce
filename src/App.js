@@ -20,7 +20,6 @@ class App extends Component {
         if (authenticatedUser) {
           const userRef = await createUserProfileDocument(authenticatedUser);
           userRef.onSnapshot((snapShot) => {
-            console.log(snapShot.data());
             setCurrentUser({
               currentUser: {
                 id: snapShot.id,

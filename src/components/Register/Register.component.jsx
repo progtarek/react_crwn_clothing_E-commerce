@@ -34,7 +34,6 @@ export default function Register() {
         email,
         password
       );
-      console.log('user', user);
       await createUserProfileDocument(user, displayName);
       setCredentials({
         displayName: '',

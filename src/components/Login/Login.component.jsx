@@ -17,7 +17,6 @@ export default function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(credentials);
     try {
       const { email, password } = credentials;
       const { user } = await auth.signInWithEmailAndPassword(email, password);
@@ -25,7 +24,6 @@ export default function Login() {
         email: '',
         password: '',
       });
-      console.log(user);
     } catch (error) {
       console.error(error);
     }
